@@ -1,0 +1,9 @@
+<div class="col-sm-4" [formGroup]="group">
+  <label class="pr-3">{{field.caption}}:</label>
+  <p-radioButton [name]="field.caption" value="true" label="True"
+    class="pr-2" [formControlName]="field.caption">
+  </p-radioButton>
+  <p-radioButton [name]="field.caption" value="false" label="False"
+    [formControlName]="field.caption">
+  </p-radioButton>
+</div>

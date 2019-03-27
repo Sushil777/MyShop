@@ -1,0 +1,29 @@
+@import 'src/styles/_variables.scss';
+
+.main-header {
+  height: 4rem;
+  // background-color: $color-primary-medium;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+  &__options {
+    padding: 1rem;
+    color: $color-white;
+    font-size: 2rem;
+    display: flex;
+    
+    &--home, &--user, &--cart {
+      cursor: pointer;
+      outline: none;
+    }
+
+    &--user {
+      position: absolute;
+      right: 1.8rem;
+    }
+
+    &--cart {
+      position: absolute;
+      right: 5rem;
+    }
+  }
+}

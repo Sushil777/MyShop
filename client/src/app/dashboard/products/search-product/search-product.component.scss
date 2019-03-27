@@ -1,0 +1,39 @@
+@import 'src/styles/_variables.scss';
+
+.main-header {
+  text-align: center;
+  color: $color-primary-dark;
+  font-size: 2.5rem;
+  margin-top: 3rem;
+}
+
+.products-wrapper {
+  margin-top: 3rem;
+}
+
+.cards-wrapper {
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: none; 
+}
+
+.btn {
+  background-color: darken($color-primary-dark, 10%);
+  color:$color-white;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.border-success {
+  border-color: $color-primary-dark !important;
+}

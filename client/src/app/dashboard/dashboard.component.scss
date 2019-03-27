@@ -1,0 +1,62 @@
+@import 'src/styles/_variables.scss';
+
+// .dashboard-wrapper {
+//   height: 91vh;
+//   background-image: linear-gradient(to right bottom, $color-light-green, $color-dark-green);
+//   background-size: cover;
+//   background-position: top;
+//   position: relative;
+
+//   clip-path: polygon(2% 5%, 98% 5%, 98% 70%, 2% 100%);
+// }
+
+// .dahboard-wrapper__message {
+//   position: absolute;
+//   top: 10%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   color: $color-white;
+//   font-size: 2rem;
+//   font-weight: 600;
+// }
+
+.dashboard-wrapper {
+  margin-top: 3rem;
+  
+  &__message {
+    text-align: center;
+    color: $color-primary-dark;
+    font-size: 2.5rem;
+  }
+}
+
+.card-wrapper {
+  margin-top: 5rem;
+}
+
+.card {
+  height: 15rem;
+  text-align: center;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 2px 3px $color-primary-medium;
+    
+    .card-body__icon {
+      color: $color-primary-dark;
+    }
+  }
+}
+
+.card-body {
+  &__icon {
+    color: $color-primary-medium;
+    font-size: 3rem;
+    padding: 1rem 0 4rem 0;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    color: $color-primary-dark;
+  }
+}

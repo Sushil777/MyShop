@@ -1,0 +1,23 @@
+<div class="main-header">Available Products</div>
+<div class="col-sm-12 products-wrapper">
+  <div class="col-sm-4 offset-sm-4">
+    <div class="card border-success cards-wrapper" *ngFor="let product of tvProducts">
+      <div class="card-header bg-transparent border-success">{{product.Name}}</div>
+      <div class="card-body">
+        <p class="card-text">Description: {{product.Description}}</p>
+        <p class="card-text">Height: {{product.Height}}" | Width: {{product.Width}}"</p>
+        <p class="card-text">Smart: {{product.IsSmart}}</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn" (click)="edit(product._id)">
+          <i class="fa fa-edit"></i> Edit
+        </button>
+        <button class="btn ml-2" routerLink="/products/edit-product">
+          <i class="fa fa-edit"></i> New
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<p-progressSpinner *ngIf="blockUI"></p-progressSpinner>
+<p-blockUI [blocked]="blockUI"></p-blockUI>

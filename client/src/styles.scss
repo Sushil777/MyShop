@@ -1,0 +1,36 @@
+@import './styles/_variables.scss';
+
+*, ** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.ui-progress-spinner {
+  position: fixed !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ui-radiobutton-box.ui-state-active {
+  border: 1px solid darken($color-primary-dark, 5%);
+  background: darken($color-primary-dark, 5%);
+}
+
+.ui-widget-header {
+  color: $color-white;
+  background: darken($color-primary-dark, 5%);
+}
+
+.ui-widget-content {
+  border: none;
+}
+
+.ui-dialog.ui-widget .ui-dialog-titlebar {
+  padding: .5rem .7rem;
+}

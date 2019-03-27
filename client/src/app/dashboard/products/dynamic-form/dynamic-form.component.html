@@ -1,0 +1,24 @@
+<form class="offset-sm-5" [formGroup]="form" (submit)="onSubmit()">
+  <ng-container *ngFor="let field of fields;" appDynamicField [field]="field" [group]="form">
+  </ng-container>
+  <div class="buttons-wrapper mt-3">
+    <button type="button" class="btn" (click)="reset()">
+      <i class="fa fa-eraser"></i> Clear
+    </button>
+    <button type="submit" class="btn ml-2">
+      <i class="fa fa-plus"></i> Create New
+    </button>
+    <button type="button" class="btn ml-2" routerLink="/products/search-product">
+      <i class="fa fa-search"></i> Search All
+    </button>
+  </div>
+</form>
+<p-dialog header="{{dialogHeader}}" [(visible)]="showDialog" [modal]="true" [responsive]="true"
+  [style]="{width: '350px', minWidth: '200px'}" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <span>{{dialogBody}}</span>
+  <p-footer>
+    <button type="button" class="btn" (click)="showDialog = false">OK</button>
+  </p-footer>
+</p-dialog>
+<p-progressSpinner *ngIf="blockUI"></p-progressSpinner>
+<p-blockUI [blocked]="blockUI"></p-blockUI>

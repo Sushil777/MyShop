@@ -1,0 +1,9 @@
+<div class="form-group col-sm-4" [formGroup]="group">
+  <label for="{{field.caption}}">{{field.caption}}</label>
+  <input
+    [formControlName]="field.caption"
+    [placeholder]="field.defaultValue"
+    class="form-control">
+    <div *ngIf="group.get(field.caption).invalid" class="invalid-input">{{field.validationMessage}}</div>
+  </div>
+  <!--[type]="field.inputType"-->
