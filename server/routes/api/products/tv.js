@@ -31,4 +31,35 @@ router.get("/:id", (req, res) => {
     );
 });
 
+router.post("/:id",(req, res) => {
+    const tvFields = {};
+    tvFields.id = req.params.id;
+    if (req.body.Name) tvFields.Name = req.body.Name;
+    if (req.body.Description) tvFields.Description = req.body.Description;
+    if (req.body.Height) tvFields.Height = req.body.Height;
+    if (req.body.Width) tvFields.Width = req.body.Width;
+    if (req.body.IsSmart) tvFields.IsSmart = req.body.IsSmart;
+
+    Tv.findById(req.params.id).then(tv => {
+      if (tv) {
+        Tv.findOneAndUpdate(
+          { _id: req.params.id },
+          { $set: tvFields },
+          { new: true }
+        ).then(tvData => res.json(tvData));
+      }
+    });
+  }
+);
+
+router.delete("/:id", (req, res) => {
+  Tv.findById(req.params.id)
+    .then(Tv => {
+      Tv.remove().then(() => res.json({ success: true }));
+    })
+    .catch(err => 
+      res.status(404).json({ Tvnotfound: "No Tv found with that ID" })
+    );
+});
+
 module.exports = router;
